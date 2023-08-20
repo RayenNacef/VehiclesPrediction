@@ -1,13 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<title>Home</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+   
+
 </head>
 <body>
-    <h1>
-        Hello World
-    </h1>
+
+	<header>
+		<div class="login">
+    <center>
+    <fieldset>
+                
+
+     <!-- Main Input For Receiving Query to our ML -->
+         <form action="/predict" method="POST">
+            <h1>Electric Car Stat Detector</h1>
+            <hr>
+            <table>
+        <tr>
+           <input type="text" name="Time [s]" placeholder="Time [s]" required="required" /><br><br>
+        </tr>
+        <tr>
+           <input type="text" name="Battery Voltage [V]" placeholder="Battery Voltage [V]" required="required" /><br><br>
+        </tr>
+        <tr>
+           <input type="text" name="Motor Torque [Nm]" placeholder="Motor Torque [Nm]" required="required" /><br><br>
+        </tr>
+        <tr>
+           <input type="text" name="Battery Current [A]" placeholder="Battery Current [A]" required="required" /><br><br>
+        </tr>
+        <tr>
+           <input type="text" name="Battery Temperature" placeholder="Battery Temperature" required="required" /><br><br>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" id="submit" value="Predict">
+        
+    </table>
+
+        
+</form>
+    </fieldset>
+    </center>
+    <!--<form action="{{ url_for('predict')}}"method="post">-->
+                
+       
+
+        
+    
+
+   <br>
+   <br>
+  
+   
+ </div>
+	</header>
+
+
 </body>
 </html>
